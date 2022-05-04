@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SZvahf+RZy5bcYcVDNeN+yJ2tDAqf1LfeslF5fSf85PU1fMdEoCkp0GRgx9yoxwUKokYzdMud9e/uQ9yHrkWvA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mayardes Oliveira\\Desktop\\Josy\\C#\\Prova\\MavelApi\\MavelApi\\MavelApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mayardes Oliveira\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
