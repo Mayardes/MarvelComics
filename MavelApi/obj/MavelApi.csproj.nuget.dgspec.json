@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mayardes Oliveira\\Desktop\\Josy\\C#\\Prova\\MavelApi\\MavelApi\\MavelApi.csproj": {}
+    "C:\\Projetos\\Pessoais\\MavelApi\\MavelApi\\MavelApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mayardes Oliveira\\Desktop\\Josy\\C#\\Prova\\MavelApi\\MavelApi\\MavelApi.csproj": {
+    "C:\\Projetos\\Pessoais\\MavelApi\\MavelApi\\MavelApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mayardes Oliveira\\Desktop\\Josy\\C#\\Prova\\MavelApi\\MavelApi\\MavelApi.csproj",
+        "projectUniqueName": "C:\\Projetos\\Pessoais\\MavelApi\\MavelApi\\MavelApi.csproj",
         "projectName": "MavelApi",
-        "projectPath": "C:\\Users\\Mayardes Oliveira\\Desktop\\Josy\\C#\\Prova\\MavelApi\\MavelApi\\MavelApi.csproj",
+        "projectPath": "C:\\Projetos\\Pessoais\\MavelApi\\MavelApi\\MavelApi.csproj",
         "packagesPath": "C:\\Users\\Mayardes Oliveira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mayardes Oliveira\\Desktop\\Josy\\C#\\Prova\\MavelApi\\MavelApi\\obj\\",
+        "outputPath": "C:\\Projetos\\Pessoais\\MavelApi\\MavelApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

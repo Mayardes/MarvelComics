@@ -26,7 +26,6 @@ namespace MavelApi.Controllers
 
         public IActionResult Index([FromServices] IConfiguration config)
         {
-            Personagem personagem;
 
             using (var client = new HttpClient())
             {
@@ -36,30 +35,36 @@ namespace MavelApi.Controllers
                 string ts = DateTime.Now.Ticks.ToString();
                 string publicKey = config.GetSection("MarvelComicsAPI:PublicKey").Value;
                 string hash = GerarHash(ts, publicKey,
-                    config.GetSection("MarvelComicsAPI:PrivateKey").Value);
+                config.GetSection("MarvelComicsAPI:PrivateKey").Value);
+
 
                 HttpResponseMessage response = client.GetAsync(
                     config.GetSection("MarvelComicsAPI:BaseURL").Value +
-                    $"characters?ts={ts}&apikey={publicKey}&hash={hash}&" +
-                    $"name={Uri.EscapeUriString("Captain America")}").Result;
+                    $"comics?ts={ts}&apikey={publicKey}&hash={hash}").Result;
 
                 response.EnsureSuccessStatusCode();
 
                 string conteudo = response.Content.ReadAsStringAsync().Result;
                 dynamic resultado = JsonConvert.DeserializeObject(conteudo);
 
-                personagem = new Personagem();
+                var comics = new List<Comics>();
 
-                //Dados vindo da marvel
-                personagem.Nome = resultado.data.results[0].name;
-                personagem.Descricao = resultado.data.results[0].description;
-                personagem.UrlImagem = resultado.data.results[0].thumbnail.path + "." +
-                resultado.data.results[0].thumbnail.extension;
-                personagem.UrlWiki = resultado.data.results[0].urls[1].url;
+                for (int i = 0; i < 15; i++)
+                {
+                    comics.Add(new Comics()
+                    {
+                        Id = resultado.data.results[i].id,
+                        Title = resultado.data.results[i].title,
+                        UPC = resultado.data.results[i].upc,
+                        URL = resultado.data.results[i].resourceURI,
+                        Image = resultado.data.results[i].thumbnail.path + "." + resultado.data.results[i].thumbnail.extension,
+                        Details = resultado.data.results[i].urls[0].url
+                    });
+     
+                }
 
+                return View(comics);
             }
-
-            return View(personagem);
         }
 
         private string GerarHash(string ts, string publicKey, string privateKey)
